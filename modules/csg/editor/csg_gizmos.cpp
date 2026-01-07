@@ -417,7 +417,8 @@ void CSGShape3DGizmoPlugin::redraw(EditorNode3DGizmo *p_gizmo) {
 
 	p_gizmo->add_lines(lines, material);
 
-	Ref<ArrayMesh> collision_mesh = memnew(ArrayMesh);
+	Ref<ArrayMesh> collision_mesh;
+	collision_mesh.instantiate();
 	Array collision_array;
 	collision_array.resize(Mesh::ARRAY_MAX);
 	collision_array[Mesh::ARRAY_VERTEX] = faces;
